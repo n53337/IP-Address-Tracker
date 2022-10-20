@@ -92,7 +92,6 @@ html {
 
 .app {
   height: 100vh;
-  background-color: tomato;
   display: grid;
   grid-template-rows: 35% 65%;
 }
@@ -103,6 +102,7 @@ html {
   background: url("/images/pattern-bg.png");
   background-size: cover;
   position: relative;
+  z-index: 1000;
 }
 
 .ip__header {
@@ -180,6 +180,9 @@ html {
   font-size: var(--fs-m);
   font-weight: var(--fw-500);
   color: var(--clr-grayD);
+}
+
+.map {
 }
 
 /*
