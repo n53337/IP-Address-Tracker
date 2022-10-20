@@ -57,14 +57,131 @@ select {
 */
 
 :root {
+  /* colors */
   --clr-grayD: hsl(0, 0%, 17%);
   --clr-gray: hsl(0, 0%, 59%);
 
+  /* font sizes */
+  --fs-s: 0.6rem;
+  --fs-m: 1.2rem;
+  --fs-l: 1.5rem;
+
+  /* font widths */
   --fw-400: 400;
   --fw-500: 500;
   --fw-700: 700;
+
+  /* shadow */
+  --shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
 html {
   font-family: "Rubik", sans-serif;
 }
+
+/*
+  * LAYOUT
+*/
+
+.container {
+  max-width: 1000px;
+  padding: 0 5vw;
+  margin: 0 auto;
+}
+
+.app {
+  height: 100vh;
+  background-color: tomato;
+  display: grid;
+  grid-template-rows: 30% 70%;
+}
+
+/* IP SEARCH */
+
+.ip {
+  background: url("/images/pattern-bg.png");
+  background-size: cover;
+}
+
+.ip__header {
+  color: white;
+  text-align: center;
+  font-size: var(--fs-l);
+  font-weight: var(--fw-500);
+  margin-block: 1rem;
+}
+
+.ip__form {
+  display: flex;
+  justify-content: center;
+  margin-block: 1rem;
+}
+
+.ip__form > input,
+.ip__form > button {
+  outline: none;
+  border: none;
+}
+
+.ip__form > input {
+  padding: 0.5rem 1rem;
+  background-color: white;
+  width: 100%;
+  border-top-left-radius: 0.8rem;
+  border-bottom-left-radius: 0.8rem;
+  font-size: var(--fs-m);
+  color: var(--clr-grayD);
+  box-shadow: var(--shadow);
+}
+
+.ip__form > button {
+  padding: 1rem;
+  background-color: var(--clr-grayD);
+  border-top-right-radius: 0.8rem;
+  border-bottom-right-radius: 0.8rem;
+  transition: 0.5s;
+}
+
+.ip__form > button:hover {
+  transition: 0.5s;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+/* IP DATA */
+
+.ip__wrapper {
+  margin-block: 1rem;
+}
+
+.ip__info {
+  background-color: white;
+  border-radius: 0.8rem;
+  padding: 1.5rem;
+  z-index: 100;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  box-shadow: var(--shadow);
+}
+
+.ip__info--title {
+  text-transform: uppercase;
+  font-size: var(--fs-s);
+  color: var(--clr-gray);
+  font-weight: var(--fw-700);
+  letter-spacing: 1.5px;
+}
+
+.ip__info--text {
+  font-size: var(--fs-m);
+  font-weight: var(--fw-500);
+  color: var(--clr-grayD);
+}
+
+/*
+  * MEDIA QUERIES
+*/
+
+/* SMALL SCREENS */

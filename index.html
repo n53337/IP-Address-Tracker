@@ -13,11 +13,48 @@
     />
 
     <title>Frontend Mentor | IP Address Tracker</title>
+    <link rel="stylesheet" href="/src/css/styles.css" />
   </head>
   <body>
     <div class="app">
-      <section class="ip"></section>
-      <section class="map"></section>
+      <section class="ip">
+        <h1 class="ip__header">IP Address Tracker</h1>
+
+        <!-- !IP ENTER FORM -->
+
+        <form class="ip__form container" action="#">
+          <input type="text" />
+          <button type="submit">
+            <img src="/images/icon-arrow.svg" alt="submit button" />
+          </button>
+        </form>
+
+        <!-- !IP DISPLAY DATA -->
+
+        <div class="ip__wrapper container">
+          <aside class="ip__info">
+            <div class="ip__info--adress">
+              <span class="ip__info--title">ip adress</span>
+              <p class="ip__info--text">192.168.1.1</p>
+            </div>
+            <div class="ip__info--location">
+              <span class="ip__info--title">location</span>
+              <p class="ip__info--text">New York city</p>
+            </div>
+            <div class="ip__info--timezone">
+              <span class="ip__info--title">timezone</span>
+              <p class="ip__info--text">UTC -05:00</p>
+            </div>
+            <div class="ip__info--isp">
+              <span class="ip__info--title">isp</span>
+              <p class="ip__info--text">SpaceX Starlink</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ! MAP -->
+      <div class="map"></div>
     </div>
     <!-- IP Address Tracker Search for any IP address or domain IP Address Location
     Timezone UTC
