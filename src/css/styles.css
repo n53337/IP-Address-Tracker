@@ -94,7 +94,7 @@ html {
   height: 100vh;
   background-color: tomato;
   display: grid;
-  grid-template-rows: 30% 70%;
+  grid-template-rows: 35% 65%;
 }
 
 /* IP SEARCH */
@@ -102,6 +102,7 @@ html {
 .ip {
   background: url("/images/pattern-bg.png");
   background-size: cover;
+  position: relative;
 }
 
 .ip__header {
@@ -163,6 +164,7 @@ html {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  gap: 2rem;
   box-shadow: var(--shadow);
 }
 
@@ -185,3 +187,40 @@ html {
 */
 
 /* SMALL SCREENS */
+
+@media (max-width: 25em) {
+  .ip__info {
+    flex-direction: column;
+    gap: 0;
+    text-align: center;
+    padding: 1rem 0;
+  }
+}
+
+/* BIG SCREENS */
+
+@media (min-width: 25em) {
+  .ip__header,
+  .ip__form,
+  .ip__wrapper {
+    margin-block: 5.5vh;
+  }
+
+  .ip__form {
+    padding: 0 20%;
+  }
+
+  .ip__info div:not(:first-child) {
+    position: relative;
+  }
+
+  .ip__info div:not(:first-child)::after {
+    content: "";
+    background-color: var(--clr-gray);
+    height: 100%;
+    width: 1px;
+    position: absolute;
+    top: 0;
+    left: -12%;
+  }
+}
