@@ -1,7 +1,13 @@
 const App = () => {
-  // !Display the Map
+  // !init the Map
+
+  const map = L.map("map");
+
   const mapRender = (coords) => {
-    const map = L.map("map").setView(coords, 9);
+    const mapContainer = document.getElementById("map");
+    if (mapContainer.classList.contains("leaflet-container")) {
+      map.setView(coords, 10);
+    }
     L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution:
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
@@ -9,9 +15,18 @@ const App = () => {
   };
 
   const renderIpData = async (data) => {
-    const { city, country, geonameId, lat, lng } = data.location;
-    console.log(lat, lng);
-    mapRender([lat, lng], 20);
+    const phIpAdress = document.querySelector(".ip__info--adress>p");
+    const phLocation = document.querySelector(".ip__info--location>p");
+    const phTimezone = document.querySelector(".ip__info--timezone>p");
+    const phIsp = document.querySelector(".ip__info--isp>p");
+    const { city, lat, lng, timezone } = data.location;
+    const ipAdress = data.ip;
+    const isp = data.isp;
+    mapRender([lat, lng]);
+    phIpAdress.textContent = ipAdress;
+    phLocation.textContent = city;
+    phTimezone.textContent = timezone;
+    phIsp.textContent = isp;
   };
 
   // !Search IP Data
