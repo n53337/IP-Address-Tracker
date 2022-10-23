@@ -1,3 +1,4 @@
+import icon from "./../../images/icon-location.svg";
 const App = () => {
   // !init the Map
 
@@ -8,6 +9,11 @@ const App = () => {
     if (mapContainer.classList.contains("leaflet-container")) {
       map.setView(coords, 10);
     }
+    const markerIcon = L.icon({
+      iconUrl: icon,
+      iconSize: [30, 40],
+    });
+    L.marker(coords, { icon: markerIcon }).addTo(map);
     L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution:
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
@@ -65,4 +71,4 @@ const App = () => {
   renderIpSearch();
 };
 
-App();
+window.addEventListener("load", App);
